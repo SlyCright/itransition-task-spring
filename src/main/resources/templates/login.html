@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <div th:replace="/fragment/header :: header-css"/></div>
+    <title>Log in with your account</title>
+</head>
+<body>
+    <div th:replace="/fragment/header :: header"/></div>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <form  method="POST" action="/login">
+                <h2>Вход в систему</h2>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
