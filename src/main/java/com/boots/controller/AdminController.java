@@ -29,7 +29,6 @@ public class AdminController {
         expireSessions(IDs);
         for(Long userid : IDs) {
             userService.deleteUser(userid);
-            System.out.println("ID: " + userid);
         }
         model.addAttribute("users", userService.allUsers());
         return "redirect:/admin";
@@ -40,7 +39,6 @@ public class AdminController {
         expireSessions(IDs);
         for(Long userid : IDs) {
             userService.blockUser(userid);
-            System.out.println("ID: " + userid);
         }
         model.addAttribute("users", userService.allUsers());
         return "redirect:/admin";
@@ -50,7 +48,6 @@ public class AdminController {
     public String unblock(@RequestBody List<Long> IDs, Model model) {
         for(Long userid : IDs) {
             userService.unblockUser(userid);
-            System.out.println("ID: " + userid);
         }
         model.addAttribute("users", userService.allUsers());
         return "redirect:/admin";
